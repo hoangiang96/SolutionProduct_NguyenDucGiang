@@ -84,7 +84,7 @@
             getProducts();
         }
 
-        function getProducts(keyword, page) {
+        function getProducts(page) {
             page = page || 0;
             var config = {
                 params: {

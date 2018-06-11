@@ -45,14 +45,14 @@ namespace Product.Model.Models
 
         public string Tags { get; set; }
 
-        public int Quantity { set; get; }
+        //public int Quantity { set; get; }
 
-        public decimal OriginalPrice { set; get; }
+        //public decimal OriginalPrice { set; get; }
 
         [ForeignKey("CategoryID")]
         public virtual ProductCategory ProductCategory { set; get; }
 
-        public virtual IEnumerable<ProductTag> ProductTags { set; get; }
+        //public virtual IEnumerable<ProductTag> ProductTags { set; get; }
 
     }
 }

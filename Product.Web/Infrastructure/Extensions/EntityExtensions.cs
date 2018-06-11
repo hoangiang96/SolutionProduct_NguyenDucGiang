@@ -68,7 +68,7 @@ namespace Product.Web.Infrastructure.Extensions
             productCategory.Status = productCategoryVm.Status;
         }
 
-        public static void UpdataProduct(this Item product, itemViewModel productVm)
+        public static void UpdateProduct(this Item product, itemViewModel productVm)
         {
             product.ID = productVm.ID;
             product.Name = productVm.Name;
@@ -93,8 +93,8 @@ namespace Product.Web.Infrastructure.Extensions
             product.MetaDescription = productVm.MetaDescription;
             product.Status = productVm.Status;
             product.Tags = productVm.Tags;
-            product.Quantity = productVm.Quantity;
-            product.OriginalPrice = productVm.OriginalPrice;
+            //product.Quantity = productVm.Quantity;
+            //product.OriginalPrice = productVm.OriginalPrice;
         }
 
     }

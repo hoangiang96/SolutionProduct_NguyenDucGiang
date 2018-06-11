@@ -11,7 +11,7 @@
             Name: "Ten danh muc",
             Alias:"Ten-danh-muc"
         }
-        
+
         $scope.AddProductCategory = AddProductCategory;
         function AddProductCategory() {
             apiService.post('api/productcategory/Create', $scope.productCategory, function (result) {
@@ -31,6 +31,5 @@
         }
         loadParentCategory();
     }
-
 
 })(angular.module('product.product_categories'));

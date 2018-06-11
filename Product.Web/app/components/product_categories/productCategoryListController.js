@@ -85,7 +85,7 @@
             getProductCategories();
         }
 
-        function getProductCategories(keyword,page) {
+        function getProductCategories(page) {
             page = page || 0;
             var config = {
                 params: {

@@ -238,14 +238,14 @@ namespace Product.Service
         }
 
         //Selling product
-        public bool SellProduct(int productId, int quantity)
-        {
-            var product = _ItemRepository.GetSingleById(productId);
-            if (product.Quantity < quantity)
-                return false;
-            product.Quantity -= quantity;
-            return true;
-        }
+        //public bool SellProduct(int productId, int quantity)
+        //{
+        //    var product = _ItemRepository.GetSingleById(productId);
+        //    if (product.Quantity < quantity)
+        //        return false;
+        //    product.Quantity -= quantity;
+        //    return true;
+        //}
 
         public IEnumerable<Item> GetListItem(string keyword)
         {

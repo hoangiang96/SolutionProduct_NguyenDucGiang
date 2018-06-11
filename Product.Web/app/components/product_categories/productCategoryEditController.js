@@ -2,12 +2,19 @@
     app.controller('productCategoryEditController', productCategoryEditController);
 
     //inject http
-    productCategoryEditController.$inject = ['apiService', '$scope', 'notificationService', '$state','$stateParams'];
+    productCategoryEditController.$inject = ['apiService', '$scope', 'notificationService', '$state', '$stateParams','commonService'];
 
-    function productCategoryEditController(apiService, $scope, notificationService, $state,$stateParams) {
+    function productCategoryEditController(apiService, $scope, notificationService, $state, $stateParams, commonService) {
         $scope.productCategory = {
             CreatedDate: new Date(),
             Status: true
+        }
+        $scope.UpdateProductCategory = UpdateProductCategory;
+        $scope.GetSeoTitle = GetSeoTitle;
+
+
+        function GetSeoTitle() {
+            $scope.productCategory.Alias = commonService.getSeoTitle($scope.productCategory.Name);
         }
 
         function loadProductCategoryDetail(){
@@ -19,7 +26,6 @@
             });
         }
 
-        $scope.UpdateProductCategory = UpdateProductCategory;
         function UpdateProductCategory() {
             apiService.put('api/productcategory/Update', $scope.productCategory, function (result) {
                 notificationService.displaySuccess(' Update Successful '+ result.data.ID );
@@ -39,6 +45,5 @@
         loadParentCategory();
         loadProductCategoryDetail();
     }
-
 
 })(angular.module('product.product_categories'));

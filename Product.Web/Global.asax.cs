@@ -1,4 +1,5 @@
 ﻿using Autofac.Integration.WebApi;
+using Newtonsoft.Json.Serialization;
 using Product.Data;
 using Product.Web.Mappings;
 using System.Data.Entity;
@@ -21,6 +22,10 @@ namespace Product.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             Database.SetInitializer<ProductDbContext>(null);
+
+            var serializerSettings = GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings;
+            var contractResolver = (DefaultContractResolver)serializerSettings.ContractResolver;
+            contractResolver.IgnoreSerializableAttribute = true;
 
         }
     }
