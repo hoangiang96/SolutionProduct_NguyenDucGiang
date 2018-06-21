@@ -101,9 +101,39 @@
     <Compile Include="Migrations\201805300903291_EditDATABASE.Designer.cs">
       <DependentUpon>201805300903291_EditDATABASE.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806150900097_addTableApplication.cs" />
+    <Compile Include="Migrations\201806150900097_addTableApplication.Designer.cs">
+      <DependentUpon>201806150900097_addTableApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806190618423_UnitialCreate.cs" />
+    <Compile Include="Migrations\201806190618423_UnitialCreate.Designer.cs">
+      <DependentUpon>201806190618423_UnitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806200225032_createUser.cs" />
+    <Compile Include="Migrations\201806200225032_createUser.Designer.cs">
+      <DependentUpon>201806200225032_createUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806200229496_123fda.cs" />
+    <Compile Include="Migrations\201806200229496_123fda.Designer.cs">
+      <DependentUpon>201806200229496_123fda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806200236577_adbnc.cs" />
+    <Compile Include="Migrations\201806200236577_adbnc.Designer.cs">
+      <DependentUpon>201806200236577_adbnc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806200241230_abcdef.cs" />
+    <Compile Include="Migrations\201806200241230_abcdef.Designer.cs">
+      <DependentUpon>201806200241230_abcdef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806210234077_abcAdmin.cs" />
+    <Compile Include="Migrations\201806210234077_abcAdmin.Designer.cs">
+      <DependentUpon>201806210234077_abcAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProductDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ApplicationGroupRepository.cs" />
+    <Compile Include="Repositories\ApplicationUserGroupRepository.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
     <Compile Include="Repositories\FooterRepository.cs" />
     <Compile Include="Repositories\ItemRepository.cs" />
@@ -164,6 +194,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805300903291_EditDATABASE.resx">
       <DependentUpon>201805300903291_EditDATABASE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806150900097_addTableApplication.resx">
+      <DependentUpon>201806150900097_addTableApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806190618423_UnitialCreate.resx">
+      <DependentUpon>201806190618423_UnitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806200225032_createUser.resx">
+      <DependentUpon>201806200225032_createUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806200229496_123fda.resx">
+      <DependentUpon>201806200229496_123fda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806200236577_adbnc.resx">
+      <DependentUpon>201806200236577_adbnc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806200241230_abcdef.resx">
+      <DependentUpon>201806200241230_abcdef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806210234077_abcAdmin.resx">
+      <DependentUpon>201806210234077_abcAdmin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

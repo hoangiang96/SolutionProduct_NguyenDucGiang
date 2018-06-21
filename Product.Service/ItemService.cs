@@ -136,7 +136,6 @@ namespace Product.Service
                     productTag.TagID = tagId;
                     _ItemTagRepository.Add(productTag);
                 }
-
             }
         }
 

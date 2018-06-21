@@ -7,9 +7,7 @@
     function productAddController(apiService, $scope, notificationService, $state, commonService) {
         $scope.product = {
             CreatedDate: new Date(),
-            Status: true,
-            Name: "Ten san pham",
-            Alias: "Ten-san-pham"
+            Status: true
         }
         $scope.ckeditorOptions = {
             languague: 'vi',
@@ -24,6 +22,8 @@
         }
 
         function AddProduct() {
+            $scope.product.moreImages = JSON.stringify($scope.moreImages);
+
             apiService.post('Api/product/Create', $scope.product, function (result) {
                 notificationService.displaySuccess(result.data.Name + ' added in Database');
                 $state.go('products');
@@ -43,7 +43,21 @@
         $scope.ChooseImage = function () {
             var finder = new CKFinder();
             finder.selectActionFunction = function (fileUrl) {
-                $scope.product.Image = fileUrl;
+                $scope.$apply(function(){
+                    $scope.product.Image = fileUrl;
+                })
+            }
+            finder.popup();
+        }
+
+
+        $scope.moreImages = [];
+        $scope.ChooseMoreImage = function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.$apply(function () {
+                    $scope.moreImages.push(fileUrl);
+                })
             }
             finder.popup();
         }

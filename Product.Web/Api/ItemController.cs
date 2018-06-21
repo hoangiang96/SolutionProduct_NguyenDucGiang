@@ -15,6 +15,7 @@ using System.Web.Script.Serialization;
 namespace Product.Web.Api
 {
     [RoutePrefix("Api/Product")]
+    [Authorize]
     public class ItemController : ApiControllerBase
     {
         private IItemService _productService;
@@ -66,7 +67,7 @@ namespace Product.Web.Api
                 var model = _productService.GetAll(keyword);
 
                 totalRow = model.Count();
-                var query = model.OrderByDescending(x => x.CreatedDate).Skip(page * pageSize).Take(pageSize);
+                var query = model.OrderByDescending(x => x.ID).Skip(page * pageSize).Take(pageSize);
 
                 var responseData = Mapper.Map<IEnumerable<Item>, IEnumerable<itemViewModel>>(query.AsEnumerable());
 

@@ -34,6 +34,11 @@ namespace Product.Data
         public DbSet<VisitorStatistic> VisitorStatistics { get; set; }
         public DbSet<Error> Errors { get; set; }
 
+        public DbSet<ApplicationGroup> ApplicationGroups { set; get; }
+        //public DbSet<ApplicationRole> ApplicationRoles { set; get; }
+        //public DbSet<ApplicationRoleGroup> ApplicationRoleGroups { set; get; }
+        public DbSet<ApplicationUserGroup> ApplicationUserGroups { set; get; }
+
         public static ProductDbContext Create()
         {
             return new ProductDbContext();

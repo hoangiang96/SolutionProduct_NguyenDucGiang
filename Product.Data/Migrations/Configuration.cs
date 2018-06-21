@@ -18,31 +18,35 @@
 
         protected override void Seed(Product.Data.ProductDbContext context)
         {
-            CreateProductCategorySample(context);
-            //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ProductDbContext()));
+            //CreateProductCategorySample(context);
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ProductDbContext()));
 
-            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ProductDbContext()));
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ProductDbContext()));
 
-            //var user = new ApplicationUser()
-            //{
-            //    UserName = "HoanGiang",
-            //    Email = "ducgiang12296@gmail.com",
-            //    EmailConfirmed = true,
-            //    BirthDay = DateTime.Now,
-            //    FullName = "Technology Education"
+            var user = new ApplicationUser()
+            {
+                UserName = "admin",
+                Email = "ducgiang12296@gmail.com",
+                EmailConfirmed = true,
+                BirthDay = DateTime.Now,
+                FullName = "nguyễn đức giang"
 
-            //};
-            //    manager.Create(user, "123654$");
+            };
+            if (manager.Users.Count(x => x.UserName == "admin") == 0)
+            {
+                manager.Create(user, "admin");
 
-            //    if (!roleManager.Roles.Any())
-            //    {
-            //        roleManager.Create(new IdentityRole { Name = "Admin" });
-            //        roleManager.Create(new IdentityRole { Name = "User" });
-            //    }
+                if (!roleManager.Roles.Any())
+                {
+                    roleManager.Create(new IdentityRole { Name = "Admin" });
+                    roleManager.Create(new IdentityRole { Name = "User" });
+                }
 
-            //    var adminUser = manager.FindByEmail("ducgiang12296@gmail.com");
+                var adminUser = manager.FindByEmail("ducgiang12296@gmail.com");
 
-            //    manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+                manager.AddToRoles(adminUser.Id, new string[] { "admin", "user" });
+
+            }
         }
         private void CreateProductCategorySample(Product.Data.ProductDbContext context)
         {
